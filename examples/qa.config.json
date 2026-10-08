@@ -1,0 +1,21 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "widths": [390, 768, 1024, 1440, 1920],
+  "height": 900,
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "about", "path": "/about/" },
+    { "name": "article", "path": "/articles/detail/?id=123" }
+  ],
+  "design": "qa/design/{page}/{width}.png",
+  "out": "qa/shots",
+  "localStorage": { "cookie-consent": "accepted" },
+  "removeSelectors": ["nextjs-portal", "#__vercel-toolbar"],
+  "busySelectors": ["[aria-busy=\"true\"]", ".skeleton", ".animate-pulse"],
+  "footerSelector": "footer",
+  "settleTimeoutMs": 20000,
+  "mocks": [
+    { "match": "/api/articles/123", "file": "qa/fixtures/article-123.json" },
+    { "match": "/api/news/latest", "file": "qa/fixtures/news-latest.json" }
+  ]
+}
